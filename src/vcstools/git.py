@@ -456,6 +456,7 @@ class GitClient(VcsClientBase):
         return response
 
     def get_affected_files(self, revision):
+        # Making changes for windows support
         cmd = "git show {0} --pretty=format: --name-only".format(
             revision)
         code, output, _ = run_shell_command(cmd, shell=True, cwd=self._path)
